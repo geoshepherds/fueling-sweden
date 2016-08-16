@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What is fueling Sweden?</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/application.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.22.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.22.0/mapbox-gl.css' rel='stylesheet' />
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+
+    <div class="container">
+
+        <div id="introQuiz" class="active">
+            <div class="introContent">
+                <div id="homeTitle" class="active">
+                    <h1>What is fueling Sweden?</h1>
+                </div>
+
+                <div id="question"></div>
+            </div>
+        </div>
+
+        <div id="mapView">
+            <div id="map"></div>
+            <div id="mapIntroView" class="active">
+                <div id="about">
+                    <h3>
+                        This map shows a percentual distribution of various fuel types of passenger cars, by municipality at the end of year 2015 in Sweden.
+                    </h3>
+                    <h2 id="goToMap" class="bold upper">
+                        Go to map
+                    </h2>
+                </div>
+                <h5 id="hint" class="italic">
+                    Click here to view more fuel types
+                </h5>
+            </div>
+            <div id="mapInterface">
+                <div id="fuelBar">
+                    <h3 class="upper bold" id="activeFuel">
+                        Petrol
+                    </h3>
+                </div>
+                <div id="fuelTypeChange">
+                    <h5 class="fuelType upper">PETROL</h5>
+                    <h5 class="fuelType upper">DIESEL</h5>
+                    <h5 class="fuelType upper">ELECTRIC</h5>
+                    <h5 class="fuelType upper">ELECTRIC HYBRID</h5>
+                    <h5 class="fuelType upper">ETHANOL</h5>
+                    <h5 class="fuelType upper">CHARGING HYBRID</h5>
+                    <h5 class="fuelType upper">GAS</h5>
+                </div>
+                <div id="legend">
+                    <h5 id="minValue">34%</h5>
+                    <h5 id="maxValue">78%</h5>
+                    <div id="hoverValue"></div>
+                </div>
+                <h5 id="info" class="bold">
+                    info
+                </h5>
+                <div id="infoTooltip">
+                    <h5 class="italic">
+                        Visualisation by:
+                        <a href="http://geoshepherds.com" target="_blank">
+                            GeoShepherds
+                        </a>
+                    </h5>
+                    <h5 class="italic">
+                        Source data:
+                        <a href="http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Transporter-och-kommunikationer/Vagtrafik/Fordonsstatistik/" target="_blank">
+                            SCB
+                        </a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="data/fuel-by-kommun.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

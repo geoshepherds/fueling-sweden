@@ -1,0 +1,361 @@
+p, h1, h2, h3, h4, h5 {
+    font-family: $font;
+    color: $white;
+    font-weight: 600;
+    line-height: 22px;
+    cursor: default;
+    &.upper {
+        text-transform: uppercase;
+    }
+    &.italic {
+        font-style: italic;
+    }
+    &.bold {
+        font-weight: 800;
+    }
+}
+
+h1 { font-size: 36px; line-height: 1; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+h4 { font-size: 16px; }
+h5 { font-size: 14px; }
+
+.container {
+    width: 100%;
+    position: relative;
+    & > #introQuiz {
+        background: $teal;
+        height: 100vh;
+        display: none;
+        &.active {
+            display: block;
+        }
+        & > .introContent {
+            width: 280px;
+            margin: 0 auto;
+            padding-top: 120px;
+            position: relative;
+            @media screen and (min-width: 768px) {
+                width: 350px;
+            }
+            & > #homeTitle {
+                display: none;
+                &.active {
+                    display: block;
+                }
+                & > h1 {
+                    color: $orange;
+                    text-align: center;
+                    padding-top: 20%;
+                    line-height: 60px;
+                    @media screen and (min-width: 768px) {
+                        padding-top: 50%;
+                    }
+                }
+            }
+            & > #question {
+                text-align: center;
+                display: none;
+                &.active {
+                    display: block;
+                }
+                @media screen and (min-width: 768px) {
+                    padding-top: 25%;
+                }
+                & > h3 {
+                    padding-bottom: 42px;
+                    letter-spacing: 0.5px;
+                }
+                & > h2.answer {
+                    background: $orange;
+                    width: 100%;
+                    padding: 21px 0;
+                    margin-bottom: 14px;
+                    cursor: pointer;
+                    &:hover {
+                        background: lighten($orange, 5%);
+                    }
+                    &.notGuessed {
+                        background: $orangeLight;
+                    }
+                    &.correct {
+                        background: $green;
+                    }
+                    &.incorrect {
+                        background: $red;
+                    }
+                }
+                & > h4.skip {
+                    margin-top: 42px;
+                    opacity: 0.85;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    & > #mapView {
+        display: block;
+        height: 100vh;
+        position: relative;
+        &.active {
+            display: block;
+        }
+        & > div#map {
+            position:absolute;
+            top:0;
+            bottom:0;
+            width:100%;
+        }
+        & > #mapIntroView {
+            display: none;
+            position:absolute;
+            top:0;
+            bottom:60px;
+            width:100%;
+            z-index: 6;
+            background: rgba($white, 0.8);
+            &.active {
+                display: block;
+            }
+            & > #about {
+                width: 280px;
+                margin: 0 auto;
+                padding-top: 120px;
+                text-align: center;
+                z-index: 5;
+                & > h3 {
+                    color: $teal;
+                }
+                & > h2 {
+                    color: $teal;
+                    border-bottom: 2px solid $orange;
+                    width: 150px;
+                    margin: 56px auto 28px;
+                    padding-bottom: 7px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    &:hover {
+                        letter-spacing: 1px;
+                        transition: 0.3s;
+                    }
+                }
+            }
+            & > h5#hint {
+                background: $orange;
+                width: 120px;
+                padding: 14px;
+                position: absolute;
+                bottom: 0;
+                right: 50px;
+                z-index: 10;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 80%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: $orange transparent transparent transparent;
+                }
+            }
+        }
+        & > #mapInterface {
+            background: $white;
+            & > div#fuelBar {
+                background: $teal;
+                height: 60px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 5;
+                & > h3 {
+                    position: absolute;
+                    bottom: 21px;
+                    right: 56px;
+                    letter-spacing: 1.2px;
+                    border-bottom: 2px solid $orange;
+                    cursor: pointer;
+                    text-align: center;
+                    transition: 0.3s;
+                    &:hover {
+                      letter-spacing: 2px;
+                      transition: 0.3s;
+                    }
+                }
+            }
+            & > div#fuelTypeChange {
+              display: none;
+              position: absolute;
+              bottom: 60px;
+              right: 0;
+              width: 200px;
+              background: rgba($white, 0.9);
+              z-index: 15;
+              &.active {
+                display: block;
+              }
+              & > h5.fuelType {
+                color: $teal;
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                vertical-align: middle;
+                padding-top: 20px;
+                letter-spacing: 1px;
+                &:hover {
+                  background: $orange;
+                  font-weight: 900;
+                  color: $white;
+                  cursor: pointer;
+                }
+              }
+            }
+            & > div#legend {
+                height: 50px;
+                position: absolute;
+                bottom: 60px;
+                left: 0;
+                right: 0;
+                z-index: 5;
+                background: linear-gradient(to right, $white, $orangeDark);
+                @media screen and (min-width: 600px) {
+                    height: 300px;
+                    bottom: 100px;
+                    left: 28px;
+                    right: auto;
+                    width: 42px;
+                    background: linear-gradient(to top, $white, $orangeDark);
+                }
+                & > div#hoverValue {
+                  display: none;
+                  position: absolute;
+                  background: $teal;
+                  left: 50px;
+                  padding: 7px;
+                  z-index: 20;
+                  &.active {
+                    display: block;
+                  }
+                  &::after {
+                    content: '';
+                    border-bottom: 3px outset $teal;
+                    width: 60px;
+                    position: absolute;
+                    left: -60px;
+                    bottom: 0;
+                  }
+                }
+                & > h5 {
+                  width: 50px;
+                  height: 35px;
+                  padding-top: 15px;
+                  border-radius: 40px;
+                  text-align: center;
+                  z-index: 5;
+                  position: absolute;
+                  &#minValue {
+                    background: $white;
+                    color: $orangeDark;
+                    left: 7px;
+                    bottom: 60px;
+                    @media screen and (min-width: 600px) {
+                      bottom: -20px;
+                      left: 50px;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 98%;
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: $white transparent transparent transparent;
+                        @media screen and (min-width: 600px) {
+                          top: 42%;
+                          left: -9%;
+                          border-color: transparent $white transparent transparent;
+                        }
+                    }
+                  }
+                  &#maxValue {
+                    background: $orangeDark;
+                    right: 7px;
+                    bottom: 60px;
+                    @media screen and (min-width: 600px) {
+                      top: -20px;
+                      left: 50px;
+                      right: auto;
+                      bottom: auto;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 98%;
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: $orangeDark transparent transparent transparent;
+                        @media screen and (min-width: 600px) {
+                          top: 42%;
+                          left: -9%;
+                          border-color: transparent $orangeDark transparent transparent;
+                        }
+                    }
+                  }
+                }
+            }
+            & > h5#info {
+                position: absolute;
+                top: 14px;
+                right: 14px;
+                background: $teal;
+                width: 50px;
+                height: 35px;
+                padding-top: 15px;
+                border-radius: 40px;
+                text-align: center;
+                z-index: 20;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover {
+                    background: lighten($teal, 5%);
+                    transition: 0.3s;
+                }
+            }
+            & > div#infoTooltip {
+                visibility: hidden;
+                background: $orange;
+                width: 200px;
+                padding: 14px;
+                position: absolute;
+                top: 14px;
+                right: 80px;
+                z-index: 20;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 30%;
+                    left: 102%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent $orange;
+                }
+                &.active {
+                    visibility: visible;
+                }
+            }
+            & a {
+                color: $white;
+                border-bottom: 2px dotted $orangeLight;
+                text-decoration: none;
+            }
+        }
+    }
+
+}

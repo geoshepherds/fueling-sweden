@@ -1,0 +1,365 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+p, h1, h2, h3, h4, h5 {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #fff;
+  font-weight: 600;
+  line-height: 22px;
+  cursor: default; }
+  p.upper, h1.upper, h2.upper, h3.upper, h4.upper, h5.upper {
+    text-transform: uppercase; }
+  p.italic, h1.italic, h2.italic, h3.italic, h4.italic, h5.italic {
+    font-style: italic; }
+  p.bold, h1.bold, h2.bold, h3.bold, h4.bold, h5.bold {
+    font-weight: 800; }
+
+h1 {
+  font-size: 36px;
+  line-height: 1; }
+
+h2 {
+  font-size: 22px; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+.container {
+  width: 100%;
+  position: relative; }
+  .container > #introQuiz {
+    background: #1D918E;
+    height: 100vh;
+    display: none; }
+    .container > #introQuiz.active {
+      display: block; }
+    .container > #introQuiz > .introContent {
+      width: 280px;
+      margin: 0 auto;
+      padding-top: 120px;
+      position: relative; }
+      @media screen and (min-width: 768px) {
+        .container > #introQuiz > .introContent {
+          width: 350px; } }
+      .container > #introQuiz > .introContent > #homeTitle {
+        display: none; }
+        .container > #introQuiz > .introContent > #homeTitle.active {
+          display: block; }
+        .container > #introQuiz > .introContent > #homeTitle > h1 {
+          color: #FBAE17;
+          text-align: center;
+          padding-top: 20%;
+          line-height: 60px; }
+          @media screen and (min-width: 768px) {
+            .container > #introQuiz > .introContent > #homeTitle > h1 {
+              padding-top: 50%; } }
+      .container > #introQuiz > .introContent > #question {
+        text-align: center;
+        display: none; }
+        .container > #introQuiz > .introContent > #question.active {
+          display: block; }
+        @media screen and (min-width: 768px) {
+          .container > #introQuiz > .introContent > #question {
+            padding-top: 25%; } }
+        .container > #introQuiz > .introContent > #question > h3 {
+          padding-bottom: 42px;
+          letter-spacing: 0.5px; }
+        .container > #introQuiz > .introContent > #question > h2.answer {
+          background: #FBAE17;
+          width: 100%;
+          padding: 21px 0;
+          margin-bottom: 14px;
+          cursor: pointer; }
+          .container > #introQuiz > .introContent > #question > h2.answer:hover {
+            background: #fbb730; }
+          .container > #introQuiz > .introContent > #question > h2.answer.notGuessed {
+            background: #fcc862; }
+          .container > #introQuiz > .introContent > #question > h2.answer.correct {
+            background: #316013; }
+          .container > #introQuiz > .introContent > #question > h2.answer.incorrect {
+            background: #BC5013; }
+        .container > #introQuiz > .introContent > #question > h4.skip {
+          margin-top: 42px;
+          opacity: 0.85;
+          cursor: pointer; }
+  .container > #mapView {
+    display: block;
+    height: 100vh;
+    position: relative; }
+    .container > #mapView.active {
+      display: block; }
+    .container > #mapView > div#map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%; }
+    .container > #mapView > #mapIntroView {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 60px;
+      width: 100%;
+      z-index: 6;
+      background: rgba(255, 255, 255, 0.8); }
+      .container > #mapView > #mapIntroView.active {
+        display: block; }
+      .container > #mapView > #mapIntroView > #about {
+        width: 280px;
+        margin: 0 auto;
+        padding-top: 120px;
+        text-align: center;
+        z-index: 5; }
+        .container > #mapView > #mapIntroView > #about > h3 {
+          color: #1D918E; }
+        .container > #mapView > #mapIntroView > #about > h2 {
+          color: #1D918E;
+          border-bottom: 2px solid #FBAE17;
+          width: 150px;
+          margin: 56px auto 28px;
+          padding-bottom: 7px;
+          cursor: pointer;
+          transition: 0.3s; }
+          .container > #mapView > #mapIntroView > #about > h2:hover {
+            letter-spacing: 1px;
+            transition: 0.3s; }
+      .container > #mapView > #mapIntroView > h5#hint {
+        background: #FBAE17;
+        width: 120px;
+        padding: 14px;
+        position: absolute;
+        bottom: 0;
+        right: 50px;
+        z-index: 10; }
+        .container > #mapView > #mapIntroView > h5#hint::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 80%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: #FBAE17 transparent transparent transparent; }
+    .container > #mapView > #mapInterface {
+      background: #fff; }
+      .container > #mapView > #mapInterface > div#fuelBar {
+        background: #1D918E;
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5; }
+        .container > #mapView > #mapInterface > div#fuelBar > h3 {
+          position: absolute;
+          bottom: 21px;
+          right: 56px;
+          letter-spacing: 1.2px;
+          border-bottom: 2px solid #FBAE17;
+          cursor: pointer;
+          text-align: center;
+          transition: 0.3s; }
+          .container > #mapView > #mapInterface > div#fuelBar > h3:hover {
+            letter-spacing: 2px;
+            transition: 0.3s; }
+      .container > #mapView > #mapInterface > div#fuelTypeChange {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        width: 200px;
+        background: rgba(255, 255, 255, 0.9);
+        z-index: 15; }
+        .container > #mapView > #mapInterface > div#fuelTypeChange.active {
+          display: block; }
+        .container > #mapView > #mapInterface > div#fuelTypeChange > h5.fuelType {
+          color: #1D918E;
+          width: 100%;
+          height: 40px;
+          text-align: center;
+          vertical-align: middle;
+          padding-top: 20px;
+          letter-spacing: 1px; }
+          .container > #mapView > #mapInterface > div#fuelTypeChange > h5.fuelType:hover {
+            background: #FBAE17;
+            font-weight: 900;
+            color: #fff;
+            cursor: pointer; }
+      .container > #mapView > #mapInterface > div#legend {
+        height: 50px;
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        background: linear-gradient(to right, #fff, #db9204); }
+        @media screen and (min-width: 600px) {
+          .container > #mapView > #mapInterface > div#legend {
+            height: 300px;
+            bottom: 100px;
+            left: 28px;
+            right: auto;
+            width: 42px;
+            background: linear-gradient(to top, #fff, #db9204); } }
+        .container > #mapView > #mapInterface > div#legend > div#hoverValue {
+          display: none;
+          position: absolute;
+          background: #1D918E;
+          left: 50px;
+          padding: 7px;
+          z-index: 20; }
+          .container > #mapView > #mapInterface > div#legend > div#hoverValue.active {
+            display: block; }
+          .container > #mapView > #mapInterface > div#legend > div#hoverValue::after {
+            content: '';
+            border-bottom: 3px outset #1D918E;
+            width: 60px;
+            position: absolute;
+            left: -60px;
+            bottom: 0; }
+        .container > #mapView > #mapInterface > div#legend > h5 {
+          width: 50px;
+          height: 35px;
+          padding-top: 15px;
+          border-radius: 40px;
+          text-align: center;
+          z-index: 5;
+          position: absolute; }
+          .container > #mapView > #mapInterface > div#legend > h5#minValue {
+            background: #fff;
+            color: #db9204;
+            left: 7px;
+            bottom: 60px; }
+            @media screen and (min-width: 600px) {
+              .container > #mapView > #mapInterface > div#legend > h5#minValue {
+                bottom: -20px;
+                left: 50px; } }
+            .container > #mapView > #mapInterface > div#legend > h5#minValue::after {
+              content: '';
+              position: absolute;
+              top: 98%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #fff transparent transparent transparent; }
+              @media screen and (min-width: 600px) {
+                .container > #mapView > #mapInterface > div#legend > h5#minValue::after {
+                  top: 42%;
+                  left: -9%;
+                  border-color: transparent #fff transparent transparent; } }
+          .container > #mapView > #mapInterface > div#legend > h5#maxValue {
+            background: #db9204;
+            right: 7px;
+            bottom: 60px; }
+            @media screen and (min-width: 600px) {
+              .container > #mapView > #mapInterface > div#legend > h5#maxValue {
+                top: -20px;
+                left: 50px;
+                right: auto;
+                bottom: auto; } }
+            .container > #mapView > #mapInterface > div#legend > h5#maxValue::after {
+              content: '';
+              position: absolute;
+              top: 98%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #db9204 transparent transparent transparent; }
+              @media screen and (min-width: 600px) {
+                .container > #mapView > #mapInterface > div#legend > h5#maxValue::after {
+                  top: 42%;
+                  left: -9%;
+                  border-color: transparent #db9204 transparent transparent; } }
+      .container > #mapView > #mapInterface > h5#info {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: #1D918E;
+        width: 50px;
+        height: 35px;
+        padding-top: 15px;
+        border-radius: 40px;
+        text-align: center;
+        z-index: 20;
+        cursor: pointer;
+        transition: 0.3s; }
+        .container > #mapView > #mapInterface > h5#info:hover {
+          background: #21a6a3;
+          transition: 0.3s; }
+      .container > #mapView > #mapInterface > div#infoTooltip {
+        visibility: hidden;
+        background: #FBAE17;
+        width: 200px;
+        padding: 14px;
+        position: absolute;
+        top: 14px;
+        right: 80px;
+        z-index: 20; }
+        .container > #mapView > #mapInterface > div#infoTooltip::after {
+          content: '';
+          position: absolute;
+          top: 30%;
+          left: 102%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent transparent transparent #FBAE17; }
+        .container > #mapView > #mapInterface > div#infoTooltip.active {
+          visibility: visible; }
+      .container > #mapView > #mapInterface a {
+        color: #fff;
+        border-bottom: 2px dotted #fcc862;
+        text-decoration: none; }
+
+/*# sourceMappingURL=application.css.map */

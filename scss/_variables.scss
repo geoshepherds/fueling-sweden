@@ -1,0 +1,24 @@
+// Descriptive color variables
+
+$white          : #fff;
+$grey           : #333333;
+$teal           : #1D918E;
+$orange         : #FBAE17;
+$green          : #316013;
+$red            : #BC5013;
+
+// Functional color variables
+
+$orangeLight        : lighten($orange, 15%);
+$orangeDark         : darken($orange, 10%);
+
+// Font stacks
+
+$font             : 'Open Sans', Helvetica, sans-serif;
+$fontBold         : 'Open Sans', Helvetica, sans-serif;
+
+
+// Media query breakpoints
+
+$brk-narrow : '(max-width: 768px)';
+$brk-wide   : '(max-width: 1024px)';
