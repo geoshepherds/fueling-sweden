@@ -76,12 +76,11 @@ h5 {
 
 .container {
   width: 100%;
-  position: relative; }
+  position: relative;
+  overflow: hidden;}
   .container > #introQuiz {
     background: #1D918E;
     height: 100vh;
-    position: fixed;
-    overflow: hidden;
     display: none; }
     .container > #introQuiz.active {
       display: block; }
