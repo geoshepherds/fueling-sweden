@@ -145,6 +145,7 @@ infoBtn.addEventListener('click', function() {
 //Close introMapView, generate min max from data, compute legend, and render map when user clicks goToMap
 document.getElementById('goToMap').addEventListener('click', function() {
     document.getElementById('mapIntroView').classList.remove('active');
+    document.getElementsByTagName('body')[0].classList.add('noQuiz');
     generateMinMax('PETROL');
     renderMap();
 });
@@ -229,7 +230,10 @@ var map = new mapboxgl.Map({
     center: [14.993038200627012, 54.775893640702776],
     zoom: 2.68,
     minZoom: 2.68,
-    maxZoom: 6.36
+    maxZoom: 6.36,
+    attributionControl: {
+      position: 'top-left'
+    }
 });
 
 var bounds = [
