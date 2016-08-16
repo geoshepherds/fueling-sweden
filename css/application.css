@@ -46,7 +46,7 @@ table {
   border-spacing: 0; }
 
 body {
-   position: fixed;
+   position: relative;
    overflow: hidden;
 }  
 
