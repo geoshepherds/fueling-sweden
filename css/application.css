@@ -45,10 +45,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  overflow: hidden;
-  position: fixed; }
-
 p, h1, h2, h3, h4, h5 {
   font-family: "Open Sans", Helvetica, sans-serif;
   color: #fff;
@@ -84,6 +80,8 @@ h5 {
   .container > #introQuiz {
     background: #1D918E;
     height: 100vh;
+    position: fixed;
+    overflow: hidden;
     display: none; }
     .container > #introQuiz.active {
       display: block; }
