@@ -46,7 +46,8 @@ table {
   border-spacing: 0; }
 
 body {
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
 
 p, h1, h2, h3, h4, h5 {
   font-family: "Open Sans", Helvetica, sans-serif;
