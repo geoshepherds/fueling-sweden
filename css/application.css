@@ -45,6 +45,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  overflow: hidden; }
+
 p, h1, h2, h3, h4, h5 {
   font-family: "Open Sans", Helvetica, sans-serif;
   color: #fff;
